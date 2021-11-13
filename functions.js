@@ -102,4 +102,55 @@ function decodeROT8(text) {
     return temp.join('');
 }
 
-module.exports = {encodeCeasar, decodeCeasar, encodeDecodeAtbash, encodeROT8, decodeROT8};
+function choiceOfCipher(str, chunk) {
+    let temp;
+    console.log("In  choiceOfCipher", str);
+    switch(str) {
+        case 'C0':
+            console.log(" C0 - choiceOfCipher");
+            temp = decodeCeasar(chunk);
+        break;
+        case 'C1':
+            console.log(" C1 - choiceOfCipher");
+            temp = encodeCeasar(chunk);
+        break;
+        case 'R0':
+            console.log(" R0 - choiceOfCipher");
+            temp = decodeROT8(chunk);
+        break;
+        case 'R1':
+            console.log(" R1 - choiceOfCipher");
+            temp = encodeROT8(chunk);
+        break;
+        case 'A':
+            console.log(" A - choiceOfCipher");
+            temp = encodeDecodeAtbash(chunk);
+        break;
+        default :
+            readStream.emit('error', (err) => {
+                console.log('error', err.stack)
+            })       
+    }
+    return temp;
+    // switch(str) {
+    //     case 'C0':
+    //         console.log(" C0 - choiceOfCipher");
+    //         return encodeCeasar(chunk);
+    //     case 'C1':
+    //         console.log(" C1 - choiceOfCipher");
+    //         return encodeCeasar(chunk);
+    //     case 'R0':
+    //         console.log(" R0 - choiceOfCipher");
+    //         return encodeROT8(chunk);
+    //     case 'R1':
+    //         console.log(" R1 - choiceOfCipher");
+    //         return decodeCeasar(chunk);
+    //     case 'A':
+    //         console.log(" A - choiceOfCipher");
+    //         return encodeDecodeAtbash(chunk);
+    //     default :
+                      
+    // }
+}
+
+module.exports = {encodeCeasar, decodeCeasar, encodeDecodeAtbash, encodeROT8, decodeROT8, choiceOfCipher};
