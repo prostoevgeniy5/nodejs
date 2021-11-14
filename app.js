@@ -67,7 +67,9 @@ readStream.on('error', (error) => {
     // writeStream.write(`Result with error ${error.stack}`)
 })
 
-
+writeStream.on('error', (error) => {
+    console.log(error.stack);
+})
 // console.log(alphabet)
 // console.log('A','A'.charCodeAt(0), 'Z', 'Z'.charCodeAt(0), 'a', 'a'.charCodeAt(0), 'z', 'z'.charCodeAt(0), 'probel', ' '.charCodeAt(0), '_', '_'.charCodeAt(0));
 
