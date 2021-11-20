@@ -1,0 +1,22 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "**Usage example:**",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prostoevgeniy5/nodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prostoevgeniy5/nodejs/issues"
+  },
+  "homepage": "https://github.com/prostoevgeniy5/nodejs#readme",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
